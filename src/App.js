@@ -9,6 +9,7 @@ import Home from './componets/Home';
 function App() {
   return (
     <>
+    <h1>title</h1>
     <Router>
     <NavBar/>
     <Switch>
