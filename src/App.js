@@ -1,9 +1,11 @@
-import './App.css';
+import React from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 import NavBar from './componets/NavBar';
-import About from './componets/About';
+import Greet from './componets/Greet';
+import Tournament from './componets/Tournament';
 import Home from './componets/Home';
+import Error from './componets/Error';
 
 
 function App() {
@@ -14,7 +16,9 @@ function App() {
     <NavBar/>
     <Switch>
       <Route path='/' exact><Home /></Route>
-      <Route path='/about'><About /></Route>
+      <Route path='/tournament'><Tournament /></Route>
+      <Route path='/greet'><Greet /></Route>
+      <Route path='*'><Error /></Route>
       </Switch>
 </Router>
     </>
