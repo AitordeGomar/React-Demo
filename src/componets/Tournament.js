@@ -18,20 +18,15 @@ if(Math.random()<0.25){
     setValueB(Data[1]);
     setValueC(Data[2]);
     setValueD(Data[3]);
-}else if(Math.random()>0.25 && Math.random()<0.5){
+}else if(Math.random()>0.33 && Math.random()<0.66){
     setValueA(Data[1]);
     setValueB(Data[2]);
     setValueC(Data[3]);
     setValueD(Data[0]);
-}else if(Math.random()>0.5 && Math.random()<0.75){
-    setValueA(Data[2]);
+}else if(Math.random()>0.66){
+    setValueA(Data[1]);
     setValueB(Data[3]);
     setValueC(Data[0]);
-    setValueD(Data[1]);
-}else if(Math.random()>0.75){
-    setValueA(Data[3]);
-    setValueB(Data[0]);
-    setValueC(Data[1]);
     setValueD(Data[2]);
 }
     }
@@ -57,9 +52,9 @@ if(Math.random()<0.25){
         <button onClick={(e)=>{
         e.preventDefault();
         if(Math.abs(valueA.power-Math.random()*2) < Math.abs(valueB.power-Math.random()*2)){
-            setValueE(Data[0])
+            setValueE(valueA)
         }else{
-            setValueE(Data[1]);
+            setValueE(valueB);
         }}}>Fight</button>
         </div>
 
@@ -69,9 +64,9 @@ if(Math.random()<0.25){
         <button onClick={(e)=>{
         e.preventDefault();
         if(Math.abs(valueC.power-Math.random()*2) < Math.abs(valueD.power-Math.random()*2)){
-            setValueF(Data[2])
+            setValueF(valueC)
         }else{
-            setValueF(Data[3]);
+            setValueF(valueD);
         }}}>Fight</button>
         </div>
 
