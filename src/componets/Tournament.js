@@ -82,8 +82,8 @@ const Tournament = () => {
             <option value='4'>4</option>
         </select>
         <button value={TeamNumber} onClick={random}>Randomize</button>
-        <h3>Semifinal</h3>
         <div>
+        <h3>Semifinal</h3>
         <input value={valueA.name || ''} readOnly/>
         <input value={valueB.name || ''} readOnly/>
         <button onClick={(e)=>{
@@ -106,7 +106,7 @@ const Tournament = () => {
             setValueF(valueD);
         }}}>Fight</button>
         </div>
-
+        <div>
         <h3>Final match</h3>
         <input value={valueE.name || ""} readOnly/>
         <input value={valueF.name || ""} readOnly/>
@@ -120,6 +120,7 @@ const Tournament = () => {
         <h3>Winner</h3>
         <input value={valueG.name || ""} readOnly/>
         <button onClick={reset}>Restart</button>
+        </div>
         </>
     )
 }

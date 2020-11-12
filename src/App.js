@@ -6,6 +6,7 @@ import Greet from './componets/Greet';
 import Tournament from './componets/Tournament';
 import Home from './componets/Home';
 import Error from './componets/Error';
+import Shop from './componets/shop/Shop';
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
       <Route path='/' exact><Home /></Route>
       <Route path='/tournament'><Tournament /></Route>
       <Route path='/greet'><Greet /></Route>
+      <Route path='/shop'><Shop /></Route>
       <Route path='*'><Error /></Route>
       </Switch>
 </Router>
