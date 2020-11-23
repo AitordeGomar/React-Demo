@@ -7,3 +7,8 @@
 .component{
   width:90vw;
 }
+
+.block{
+  display:block;
+  margin:2vw auto 2vw 0;
+}

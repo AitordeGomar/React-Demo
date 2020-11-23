@@ -1,6 +1,6 @@
 import React from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-
+import {Link} from 'react-router-dom';
 import NavBar from './componets/NavBar';
 import Greet from './componets/Greet';
 import Tournament from './componets/Tournament';
@@ -15,7 +15,7 @@ import '../src/App.css';
 function App() {
   return (
     <>
-    <h1>title</h1>
+    <h1>Some React projects</h1>
     <Router>
     <NavBar/>
     <Switch>
@@ -27,6 +27,7 @@ function App() {
       <Route path='*'><Error /></Route>
       </Switch>
 </Router>
+
     </>
   );
 }

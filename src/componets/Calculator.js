@@ -62,8 +62,8 @@ const Calculator = () => {
 
     return (
         <div>
-            <input style={{marginTop:'3vw'}} type='text' value={savedValue || ''} readOnly/>
-            <input type='text' value={defaultValue || value} readOnly/>
+            <input style={{marginTop:'3vw'}} id="input1"type='text' value={savedValue || ''} readOnly/>
+            <input type='text' id='input2' value={defaultValue || value} readOnly/>
             {buttons.map((btn, i)=>{
                 return <CalcButton  key={i} symbol={btn.symbol} width={btn.width} action={(symbol)=>{btn.action(symbol)}}/>
             })}
