@@ -8,11 +8,12 @@
     width:24vw;
 }
 .cols-3,.cols-2,.cols-1{
-border-color:black;
-background-color:grey;
-color:white;
-height:10vw;
-font-size: 1.5em;
+    border-color:black;
+    background-color:grey;
+    color:white;
+    height:10vw;
+    max-height:80px;
+    font-size: 1.5em;
 }
 #input1, #input2{
     display:block;
@@ -21,7 +22,7 @@ font-size: 1.5em;
 }
 #input1{
     font-size: 0.8em;
-    text-align: left;
+    text-align: right;
 }
 #input2{
     font-size: 1.5em;
@@ -30,7 +31,7 @@ font-size: 1.5em;
     text-shadow: 1px 1px black;
 }
 div{
-    margin:0 1vw;
+    max-height: 90vw;
 }
 button:hover{
     background-color:white;
