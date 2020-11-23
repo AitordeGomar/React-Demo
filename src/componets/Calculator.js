@@ -5,27 +5,32 @@ const Calculator = () => {
 
     const [value, setValue] = useState('');
 
+    const buttons = [
+        {symbol:'C', width:'cols-3'},
+        {symbol:'/', width:'cols-1'},
+        {symbol:'7', width:'cols-1'},
+        {symbol:'8', width:'cols-1'},
+        {symbol:'9', width:'cols-1'},
+        {symbol:'X', width:'cols-1'},
+        {symbol:'4', width:'cols-1'},
+        {symbol:'5', width:'cols-1'},
+        {symbol:'6', width:'cols-1'},
+        {symbol:'-', width:'cols-1'},
+        {symbol:'1', width:'cols-1'},
+        {symbol:'2', width:'cols-1'},
+        {symbol:'3', width:'cols-1'},
+        {symbol:'+', width:'cols-1'},
+        {symbol:'0', width:'cols-2'},
+        {symbol:'.', width:'cols-1'},
+        {symbol:'=', width:'cols-1'}
+    ]
+
     return (
         <div>
             <input type='text' value={value}/>
-            <CalcButton symbol='C' width='cols-3'/>
-            <CalcButton symbol='/' width='cols-1'/>
-            <CalcButton symbol='7' width='cols-1'/>            
-            <CalcButton symbol='8' width='cols-1'/>            
-            <CalcButton symbol='9' width='cols-1'/>
-            <CalcButton symbol='X' width='cols-1'/>
-            <CalcButton symbol='4' width='cols-1'/>            
-            <CalcButton symbol='5' width='cols-1'/>            
-            <CalcButton symbol='6' width='cols-1'/>
-            <CalcButton symbol='-' width='cols-1'/>
-            <CalcButton symbol='1' width='cols-1'/>
-            <CalcButton symbol='2' width='cols-1'/>
-            <CalcButton symbol='3' width='cols-1'/>
-            <CalcButton symbol='+' width='cols-1'/>
-            <CalcButton symbol='0' width='cols-2'/>
-            <CalcButton symbol='.' width='cols-1'/>            
-            <CalcButton symbol='=' width='cols-1'/>            
-
+            {buttons.map((btn, i)=>{
+                return <CalcButton symbol={btn.symbol} width={btn.width}/>
+            })}
         </div>
     )
 
