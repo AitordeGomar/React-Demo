@@ -26,18 +26,18 @@ const Calculator = () => {
             setSavedValue('');
             alert('You need two values. Try again,please');
         }else{
-        switch(savedOperation){
-            case '/': setValue(parseFloat(savedValue) / parseFloat(value));
-            break;
-            case 'X': setValue(parseFloat(savedValue) * parseFloat(value));
-            break;
-            case '+': setValue(parseFloat(savedValue) + parseFloat(value));
-            break;
-            case '-': setValue(parseFloat(savedValue) - parseFloat(value));
-            break;
-            default: setValue('0');
+            switch(savedOperation){
+                case '/': setValue(parseFloat(savedValue) / parseFloat(value));
+                break;
+                case 'X': setValue(parseFloat(savedValue) * parseFloat(value));
+                break;
+                case '+': setValue(parseFloat(savedValue) + parseFloat(value));
+                break;
+                case '-': setValue(parseFloat(savedValue) - parseFloat(value));
+                break;
+                default: setValue('0');
+            }
         }
-    }
     }
 
     const buttons = [
@@ -60,10 +60,56 @@ const Calculator = () => {
         {symbol:'=', width:'cols-1', action:calculate}
     ]
 
+    const keyPressed=(e)=>{
+        switch(e.charCode){
+            case 13: calculate();
+            break;
+            case 42: setSavedOperation('X');
+                setSavedValue(value);
+                setValue('')
+            break;
+            case 43: setSavedOperation('+');
+                setSavedValue(value);
+                setValue('')
+            break;
+            case 44: setValue(value + '.');
+            break;
+            case 45: setSavedOperation('-');
+                setSavedValue(value);
+                setValue('')
+            break;
+            case 47: setSavedOperation('/');
+                setSavedValue(value);
+                setValue('')
+            break;
+            case 48: setValue(value + '0');
+            break;
+            case 49: setValue(value + '1');
+            break;
+            case 50: setValue(value + '2');
+            break;
+            case 51: setValue(value + '3');
+            break;
+            case 52: setValue(value + '4');
+            break;
+            case 53: setValue(value + '5');
+            break;
+            case 54: setValue(value + '6');
+            break;
+            case 55: setValue(value + '7');
+            break;
+            case 56: setValue(value + '8');
+            break;
+            case 57: setValue(value + '9');
+            break;
+            default:alert('Button not available');
+        }
+    }
+
     return (
         <div>
             <input style={{marginTop:'3vw'}} id="input1"type='text' value={savedValue || ''} readOnly/>
-            <input type='text' id='input2' value={defaultValue || value} readOnly/>
+            <input onKeyPress={keyPressed} onClick={reset} type='text' id='input2' value={value || defaultValue} readOnly/>
             {buttons.map((btn, i)=>{
                 return <CalcButton  key={i} symbol={btn.symbol} width={btn.width} action={(symbol)=>{btn.action(symbol)}}/>
             })}

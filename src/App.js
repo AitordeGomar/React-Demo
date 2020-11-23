@@ -1,6 +1,5 @@
 import React from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import {Link} from 'react-router-dom';
 import NavBar from './componets/NavBar';
 import Greet from './componets/Greet';
 import Tournament from './componets/Tournament';
