@@ -1,3 +1,18 @@
 h1{
     background-color: aquamarine;
 }
+
+.item{
+    display:inline-block;
+    margin: 2vw 1vw;
+    /* width:40vw;
+    height:30vw; */
+    border:1px solid black;
+    word-break: keep-all;
+}
+
+img{
+    display:block;
+    height:10vw;
+    width:10vw;
+}

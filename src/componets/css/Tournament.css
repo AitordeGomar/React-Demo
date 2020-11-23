@@ -1,0 +1,15 @@
+select{
+    width:70vw;
+    margin-top:3vw;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.auto{
+    display:block;
+}
+
+.hidden{
+    display:none;
+}

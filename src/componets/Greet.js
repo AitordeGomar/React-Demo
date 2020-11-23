@@ -5,7 +5,11 @@ const Home = () => {
     const [value, setValue] = useState('');
     const handleClick= (e)=>{
         e.preventDefault();
+        if(value.length === 0){
+            alert('You did not enter any name')
+        }else{
         alert('Hi, '+ value);
+        }
     }
 
     return (

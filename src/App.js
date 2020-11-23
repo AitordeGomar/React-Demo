@@ -8,6 +8,8 @@ import Home from './componets/Home';
 import Error from './componets/Error';
 import Shop from './componets/shop/Shop';
 
+import '../src/App.css';
+
 
 function App() {
   return (

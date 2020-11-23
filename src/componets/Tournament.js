@@ -1,5 +1,6 @@
 import React,  {useState} from 'react';
 import Data from './Data';
+import './css/Tournament.css';
 
 const Tournament = () => {
     const [TeamNumber, setTeamNumber] = useState(2);
@@ -76,13 +77,13 @@ const Tournament = () => {
     
 
     return (
-        <>
+        <div className='component'>
         <select onChange={(e)=>setTeamNumber(parseInt(e.target.value))} >
             <option value='2'>2</option>
             <option value='4'>4</option>
         </select>
         <button value={TeamNumber} onClick={random}>Randomize</button>
-        <div>
+        <div className={TeamNumber >3 ? 'auto':'hidden'}>
         <h3>Semifinal</h3>
         <input value={valueA.name || ''} readOnly/>
         <input value={valueB.name || ''} readOnly/>
@@ -95,7 +96,7 @@ const Tournament = () => {
         }}}>Fight</button>
         </div>
 
-        <div>
+        <div className={TeamNumber >3 ? 'auto':'hidden'}>
         <input value={valueC.name || ""} readOnly/>
         <input value={valueD.name || ""} readOnly/>
         <button onClick={(e)=>{
@@ -121,7 +122,7 @@ const Tournament = () => {
         <input value={valueG.name || ""} readOnly/>
         <button onClick={reset}>Restart</button>
         </div>
-        </>
+        </div>
     )
 }
 
