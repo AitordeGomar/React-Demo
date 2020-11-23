@@ -2,16 +2,15 @@ import React, {useState} from 'react';
 import './css/Calculator.css';
 
 const Calculator = () => {
-
-    const [value, setValue] = useState('');
+    const [defaultValue] = useState('0');
+    const [value, setValue] = useState(defaultValue);
     const reset = ()=>{
         return setValue('0')
     
     }
 
     const addValue= (e)=>{
-        console.log(e.target.innerText);
-            setValue(e.target.innerText);
+        setValue(value + e.target.innerText);
     }
 
     const buttons = [
@@ -36,7 +35,7 @@ const Calculator = () => {
 
     return (
         <div>
-            <input type='text' value={value || ""} readOnly/>
+            <input type='text' value={defaultValue || value} readOnly/>
             {buttons.map((btn, i)=>{
                 return <CalcButton  key={i} symbol={btn.symbol} width={btn.width} action={(symbol)=>{btn.action(symbol)}}/>
             })}
