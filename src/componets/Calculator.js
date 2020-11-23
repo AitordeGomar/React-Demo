@@ -4,32 +4,41 @@ import './css/Calculator.css';
 const Calculator = () => {
 
     const [value, setValue] = useState('');
+    const reset = ()=>{
+        return setValue('0')
+    
+    }
+
+    const addValue= (e)=>{
+        console.log(e.target.innerText);
+            setValue(e.target.innerText);
+    }
 
     const buttons = [
-        {symbol:'C', width:'cols-3'},
-        {symbol:'/', width:'cols-1'},
-        {symbol:'7', width:'cols-1'},
-        {symbol:'8', width:'cols-1'},
-        {symbol:'9', width:'cols-1'},
-        {symbol:'X', width:'cols-1'},
-        {symbol:'4', width:'cols-1'},
-        {symbol:'5', width:'cols-1'},
-        {symbol:'6', width:'cols-1'},
-        {symbol:'-', width:'cols-1'},
-        {symbol:'1', width:'cols-1'},
-        {symbol:'2', width:'cols-1'},
-        {symbol:'3', width:'cols-1'},
-        {symbol:'+', width:'cols-1'},
-        {symbol:'0', width:'cols-2'},
-        {symbol:'.', width:'cols-1'},
-        {symbol:'=', width:'cols-1'}
+        {symbol:'C', width:'cols-3', action:reset},
+        {symbol:'/', width:'cols-1', action:addValue},
+        {symbol:'7', width:'cols-1', action:addValue},
+        {symbol:'8', width:'cols-1', action:addValue},
+        {symbol:'9', width:'cols-1', action:addValue},
+        {symbol:'X', width:'cols-1', action:addValue},
+        {symbol:'4', width:'cols-1', action:addValue},
+        {symbol:'5', width:'cols-1', action:addValue},
+        {symbol:'6', width:'cols-1', action:addValue},
+        {symbol:'-', width:'cols-1', action:addValue},
+        {symbol:'1', width:'cols-1', action:addValue},
+        {symbol:'2', width:'cols-1', action:addValue},
+        {symbol:'3', width:'cols-1', action:addValue},
+        {symbol:'+', width:'cols-1', action:addValue},
+        {symbol:'0', width:'cols-2', action:addValue},
+        {symbol:'.', width:'cols-1', action:addValue},
+        {symbol:'=', width:'cols-1', action:addValue}
     ]
 
     return (
         <div>
-            <input type='text' value={value}/>
+            <input type='text' value={value || ""} readOnly/>
             {buttons.map((btn, i)=>{
-                return <CalcButton symbol={btn.symbol} width={btn.width}/>
+                return <CalcButton  key={i} symbol={btn.symbol} width={btn.width} action={(symbol)=>{btn.action(symbol)}}/>
             })}
         </div>
     )
@@ -39,7 +48,7 @@ const Calculator = () => {
 const CalcButton = (props)=>{
     return(
         <>
-        <button className={props.width}>{props.symbol}</button>
+        <button className={props.width} onClick={props.action}>{props.symbol}</button>
         </>
     )
 }
