@@ -9,22 +9,22 @@ const Calculator = () => {
         <div>
             <input type='text' value={value}/>
             <CalcButton symbol='C' width='cols-3'/>
-            <CalcButton symbol='/'/>
-            <CalcButton symbol='9'/>            
-            <CalcButton symbol='*'/>            
-            <CalcButton symbol='8'/>
-            <CalcButton symbol='7'/>
-            <CalcButton symbol='6'/>            
-            <CalcButton symbol='-'/>            
-            <CalcButton symbol='5'/>
-            <CalcButton symbol='4'/>
-            <CalcButton symbol='3'/>
-            <CalcButton symbol='+'/>
-            <CalcButton symbol='2'/>
-            <CalcButton symbol='1'/>
-            <CalcButton symbol='0'/>
-            <CalcButton symbol='.'/>            
-            <CalcButton symbol='='/>            
+            <CalcButton symbol='/' width='cols-1'/>
+            <CalcButton symbol='7' width='cols-1'/>            
+            <CalcButton symbol='8' width='cols-1'/>            
+            <CalcButton symbol='9' width='cols-1'/>
+            <CalcButton symbol='X' width='cols-1'/>
+            <CalcButton symbol='4' width='cols-1'/>            
+            <CalcButton symbol='5' width='cols-1'/>            
+            <CalcButton symbol='6' width='cols-1'/>
+            <CalcButton symbol='-' width='cols-1'/>
+            <CalcButton symbol='1' width='cols-1'/>
+            <CalcButton symbol='2' width='cols-1'/>
+            <CalcButton symbol='3' width='cols-1'/>
+            <CalcButton symbol='+' width='cols-1'/>
+            <CalcButton symbol='0' width='cols-2'/>
+            <CalcButton symbol='.' width='cols-1'/>            
+            <CalcButton symbol='=' width='cols-1'/>            
 
         </div>
     )
