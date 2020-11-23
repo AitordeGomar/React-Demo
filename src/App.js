@@ -7,6 +7,7 @@ import Tournament from './componets/Tournament';
 import Home from './componets/Home';
 import Error from './componets/Error';
 import Shop from './componets/shop/Shop';
+import Calculator from './componets/Calculator';
 
 import '../src/App.css';
 
@@ -22,6 +23,7 @@ function App() {
       <Route path='/tournament'><Tournament /></Route>
       <Route path='/greet'><Greet /></Route>
       <Route path='/shop'><Shop /></Route>
+      <Route path='/calculator'><Calculator/></Route>
       <Route path='*'><Error /></Route>
       </Switch>
 </Router>
