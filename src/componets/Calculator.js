@@ -21,7 +21,11 @@ const Calculator = () => {
         }
     } 
     const calculate = ()=>{
-        if(value === ''){alert('You need the second value');}else{
+        if(value === '' || savedValue ===''){
+            setValue('');
+            setSavedValue('');
+            alert('You need two values. Try again,please');
+        }else{
         switch(savedOperation){
             case '/': setValue(parseFloat(savedValue) / parseFloat(value));
             break;
