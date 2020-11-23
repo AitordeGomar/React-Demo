@@ -1,4 +1,5 @@
-import React, {useState} from 'react'
+import React, {useState} from 'react';
+import CalcButton from './CalcButton';
 
 const Calculator = () => {
 
@@ -6,6 +7,7 @@ const Calculator = () => {
     return (
         <div>
             <input type='text' value={value}/>
+            <CalcButton />
         </div>
     )
 }
