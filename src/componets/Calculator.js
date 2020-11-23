@@ -58,7 +58,7 @@ const Calculator = () => {
 
     return (
         <div>
-            <input type='text' value={savedValue || ''} readOnly/>
+            <input style={{marginTop:'3vw'}} type='text' value={savedValue || ''} readOnly/>
             <input type='text' value={defaultValue || value} readOnly/>
             {buttons.map((btn, i)=>{
                 return <CalcButton  key={i} symbol={btn.symbol} width={btn.width} action={(symbol)=>{btn.action(symbol)}}/>
