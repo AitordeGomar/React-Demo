@@ -1,5 +1,4 @@
 import React from 'react';
-import ShopItems from './ShopItems';
  
 const ShopCart = () => {
     return (

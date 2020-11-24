@@ -1,8 +1,10 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import './css/ShopItems.css';
-import Transfer from './Transfer';
+
 
 const ShopItems = () => {
+
+    
 
     return (
         <div>
@@ -16,17 +18,21 @@ const ShopItems = () => {
 }
 
 const Item = (props)=>{
-    const [cartElements, setCartElements] = useState({});
+    const [cartElements, setCartElements] = useState([]);
     const [boughtItems, setBoughtItems] = useState(0);
+    useEffect(()=>{
+        console.log(cartElements.length);
+        if(cartElements.length > 0){
+        alert(`You have bought ${cartElements[cartElements.length-1].units} ${cartElements[cartElements.length-1].name}(s)`);
+        }
+    },[cartElements]);
+
     const buy = (e)=>{
         e.preventDefault();
-        setCartElements({name:props.name, units:e.target.value});
-        if(cartElements.units === '1'){
-        alert(`You have bought ${cartElements.units} ${cartElements.name}`);
-        }else{
-            alert(`You have bought ${cartElements.units} ${cartElements.name}(s)`);
+        setCartElements([{name:props.name, units:e.target.value}]);
+        setBoughtItems(0);
         }
-    }
+
     return(
         <div className='item'>
         <h3>{props.name}</h3>
