@@ -1,11 +1,17 @@
-import React, {useState} from 'react';
+import React, {useState, useRef, useEffect} from 'react';
 import './css/Calculator.css';
 
 const Calculator = () => {
     const [defaultValue] = useState('');
+    const inputValue = useRef();
     const [value, setValue] = useState(defaultValue);
     const [savedValue, setSavedValue] = useState('');
     const [savedOperation, setSavedOperation] = useState('');
+
+    useEffect(() => {
+        inputValue.current.focus();
+      })
+
     const reset = ()=>{
         setValue('');
         setSavedValue('');
@@ -108,8 +114,8 @@ const Calculator = () => {
 
     return (
         <div>
-            <input style={{marginTop:'3vw'}} id="input1"type='text' value={savedValue || ''} readOnly/>
-            <input onKeyPress={keyPressed} onClick={reset} type='text' id='input2' value={value || defaultValue} readOnly/>
+            <input style={{marginTop:'3vw'}} id="input1"type='text' value={savedValue || ''} readOnly />
+            <input onKeyPress={keyPressed} onClick={reset} type='text' id='input2' value={value || defaultValue} readOnly ref={inputValue}/>
             {buttons.map((btn, i)=>{
                 return <CalcButton  key={i} symbol={btn.symbol} width={btn.width} action={(symbol)=>{btn.action(symbol)}}/>
             })}

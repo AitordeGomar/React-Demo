@@ -1,13 +1,17 @@
-import React, {useState} from 'react'
+import React, {useState, useRef, useEffect} from 'react';
 
 const Keyboard = () => {
     const [value, setValue] = useState('');
     const [realValue, setRealValue] = useState('');
+    const inputValue = useRef();
     const v1 = ['a','e','i','o','u'];
     const c1 = ['b','c','d','f','g','h','j','k','l','m','n','p','r','s','t','v','w','x', 'y','z', 'bl', 'cl','dr','fl','fr','gl','ch', 'll','pl','pr','qu','rr','tr'];
     const v2 = v1;
     const c2 = ['b','g','l','m','n','r','s','t','x','z'];
 
+    useEffect(() => {
+        inputValue.current.focus();
+      })
 
     const keyPressed = (e)=>{
         const code = e.charCodeAt(parseInt(value.length));
@@ -52,12 +56,14 @@ const Keyboard = () => {
 
     return (
         <div>
-            <input style={{display:'block'}} value={value || ''} onChange={(e)=>{
+            <h1>The Broken keyboard</h1>
+            <h3>The first text will random each letter you press, the second one is the correct one</h3>
+            <input style={{display:'block', marginTop:'1vw'}} value={value || ''} onChange={(e)=>{
                 keyPressed(e.target.value);
                 setRealValue(realValue + e.nativeEvent.data);
-                }}/>
-            <input readOnly value={realValue || ''} />
-            <button onClick={()=>setValue('')}>Clear</button>
+                }} ref={inputValue}/>
+            <input style={{display:'block', marginTop:'1vw'}}  readOnly value={realValue || ''} />
+            <button onClick={()=>{setValue('');setRealValue('')}}>Clear</button>
         </div>
     )
 }

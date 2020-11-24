@@ -11,14 +11,14 @@
     border-color:black;
     background-color:grey;
     color:white;
-    height:10vw;
+    height:10vh;
     max-height:80px;
     font-size: 1.5em;
 }
 #input1, #input2{
     display:block;
     width:96vw;
-    height:5vw;
+    height:5vh;
 }
 #input1{
     font-size: 0.8em;
